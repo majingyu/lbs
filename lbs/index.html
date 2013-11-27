@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8" />
+		<title>List Box Selector Demo</title>
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" />
+		<meta name="apple-mobile-web-app-capable" content="yes" />
+    	<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+    	<link rel="stylesheet" href="css/bootstrap.min.css">
+    	<link rel="stylesheet" href="css/bootstrap-responsive.min.css">
+    	<link rel="stylesheet" href="css/listBoxSelector.css" />
+    	<style type="text/css">
+    		html, body {
+			    margin: 0;
+			    padding: 0;
+			    height: 100%;
+			    width: 100%;
+			}
+    	</style>
+	</head>
+	<body style="display: -webkit-box; -webkit-box-orient: vertical; -webkit-box-pack: center;">
+		<div id="listBoxSelector" style="width: 60%; height: 60%; margin: 0 auto;"></div>
+	</body>
+	<script type="text/javascript" src="js/jquery.js"></script>
+	<script type="text/javascript" src="js/jquery-ui.js"></script>
+	<script type="text/javascript" src="js/bootstrap.min.js"></script>
+	<script type="text/javascript" src="js/listBoxSelector.js"></script>
+	<script type="text/javascript">
+		/*
+			have two ways init this plugin,
+			left、right and confirm are dispensable
+		*/
+		/*$('#listBoxSelector').listBoxSelector({
+			left: ['item1', 'item2', 'item3', 'item4', 'item5', 'item6', 'item7'],
+			right: ['item8', 'item9', 'item10'],
+			confirm : {
+				text: 'OK',
+				callback: function (items) {
+					console.log(items);
+				}
+			}
+		});*/
+		$('#listBoxSelector').listBoxSelector({
+			left: [{
+				text: 'item1',
+				value: 1
+			}, {
+				text: 'item2',
+				value: 2
+			}, {
+				text: 'item3',
+				value: 3
+			}, {
+				text: 'item4',
+				value: 4
+			}, {
+				text: 'item5',
+				value: 5
+			}, {
+				text: 'item6',
+				value: 6
+			}, {
+				text: 'item7',
+				value: 7
+			}],
+			right: [{
+				text: 'item8',
+				value: 8
+			}, {
+				text: 'item9',
+				value: 9
+			}, {
+				text: 'item10',
+				value: 10
+			}],
+			confirm : {
+				text: 'OK',
+				callback: function (items) {
+					console.log(items);
+				}
+			}
+		});
+		console.log($('#listBoxSelector').listBoxSelector('getItems'));
+	</script>
+</html>

@@ -1,0 +1,58 @@
+.lbs-content {
+	width: 100%;
+	height: 85%;
+}
+
+.lbs-content-height {
+	height: 100%;
+}
+
+.lbs-buttons {
+	width: 100%;
+	height: 15%
+}
+
+.lbs-left-container,
+.lbs-center-container,
+.lbs-right-container {
+	width: 33.33%;
+	height: 100%;
+	float: left;
+}
+
+.lbs-left-select,
+.lbs-right-select {
+	width: 100%;
+	height: 100% ! important;
+	cursor: auto ! important;
+}
+
+.lbs-change-btns-split {
+	width: 100%;
+	height: 20%;
+}
+
+.lbs-change-btns {
+	width: 60%;
+	height: 60%;
+	margin: 0 auto;
+}
+
+.lbs-change-btn-container {
+	width: 100%;
+	height: 25%;
+}
+
+.lbs-add-one,
+.lbs-add-all,
+.lbs-remove-one,
+.lbs-remove-all {
+	text-align: center;
+	margin: 0px;
+	padding: 0px;
+}
+
+.lbs-confirm-btn {
+	float: right;
+	margin-right: 5%;
+}
