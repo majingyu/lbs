@@ -5,7 +5,7 @@ It allow you to easily add listBox Selector to your webpages.
 It is standalone, less then 4k after minify+gzip, no image download.
 It doesnt rely on external services which go on and off, or add latency while loading.
 
-Show, dont tell, here is a <a href='https://github.com/majingyu/gfc/blob/master/lbs/index.html'>example</a>
+Show, dont tell, here is a <a href='https://github.com/majingyu/lbs/blob/master/lbs/index.html'>example</a>
 
 
 ## How to Use It
@@ -19,7 +19,7 @@ a div
 
     <div id="listBoxSelector" style="width: 800px; height: 600px;"></div>
 
-Then you add the *flowChart* in this container by
+Then you add the *listBoxSelector* in this container by
 
     jquery('#listBoxSelector').listBoxSelector({
 			left: ['item1', 'item2', 'item3', 'item4', 'item5', 'item6', 'item7'],
