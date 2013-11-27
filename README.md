@@ -32,7 +32,7 @@ Then you add the *listBoxSelector* in this container by
 			}
 		});
 
-This is it. see it <a href='index.html'>live</a>.
+This is it. see it <a href='https://github.com/majingyu/lbs/blob/master/lbs/index.html'>live</a>.
 
 You can get items:
 
