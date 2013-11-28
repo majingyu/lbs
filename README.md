@@ -5,7 +5,7 @@ It allow you to easily add listBox Selector to your webpages.
 It is standalone, less then 4k after minify+gzip, no image download.
 It doesnt rely on external services which go on and off, or add latency while loading.
 
-Show, dont tell, here is a <a href='https://github.com/majingyu/lbs/blob/master/lbs/index.html'>example</a>
+Show, dont tell, here is a <a href='https://github.com/majingyu/lbs/index.html'>example</a>
 
 
 ## How to Use It
