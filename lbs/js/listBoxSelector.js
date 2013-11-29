@@ -11,6 +11,14 @@
                 var self = this;
                 var isInitialized = $(self).data("isInitialized");
                 if (isInitialized == null) {
+                	var defaultOptions = {
+                		left: [],
+                		right: [],
+                		confirm: null
+                	};
+                	
+                	options = mergeOptions(options, defaultOptions);
+                	
                 	// if not initialize,initialize it
                 	// save options
                     $(self).data('options', options);
@@ -227,7 +235,7 @@
     	
     	var options = $(instance).data('options');
     	var confirm = options.confirm;
-    	if (confirm != null) {
+    	if (confirm != null && confirm.callback != undefined && confirm.callback != null) {
     		// if has confirm button,callback
     		var confirmBtn = $(instance).find('.lbs-confirm-btn');
     		confirmBtn.on('click', function () {
@@ -245,7 +253,7 @@
     			$.each(rightOptions, function (index, option) {
     				rightItems.push({ text: option.text, value: option.value });
     			});
-    			comfirm.callback({ left: leftItems, right: rightItems });
+    			confirm.callback({ left: leftItems, right: rightItems });
     		});
     	}
     };
@@ -368,6 +376,35 @@
         		changeBtnElement.css('margin-top', container.height() * 0.15 + 'px');
         	});
     	});
+    };
+    
+    /**
+     * merge options
+     * 
+     * @author Ximing Wang
+     */
+    var mergeOptions = function (options, defaultOptions) {
+    	if (options == undefined || options == null) {
+    		return defaultOptions;
+    	}
+    	
+    	if (options.left != undefined && options.left != null) {
+    		defaultOptions.left = options.left;
+    	}
+    	
+    	if (options.right != undefined && options.right != null) {
+    		defaultOptions.right = options.right;
+    	}
+    	
+    	if (options.confirm != undefined && options.confirm != null) {
+    		defaultOptions.confirm = options.confirm;
+    		
+    		if (options.confirm.text == undefined) {
+    			defaultOptions.confirm.text = 'OK';
+    		}
+    	}
+    	
+    	return defaultOptions;
     };
 
     $.fn.listBoxSelector = function (method) {
