@@ -46,22 +46,110 @@
          * @author Ximing Wang
          */
         getItems: function () {
+			var left = methods['getLeft'].call(this);
+			var right = methods['getRight'].call(this);
+			
+			return { left: left, right: right };
+        },
+        
+        /**
+         * get left select items
+         * 
+         * @author Ximing Wang
+         */
+        getLeft: function () {
         	var leftOptions = $(this).find('.lbs-left-select').find('option');
-        	var rightOptions = $(this).find('.lbs-right-select').find('option');
-			var leftItems = [];
-			var rightItems = [];
+			var left = [];
 			
 			// find left options
 			$.each(leftOptions, function (index, option) {
-				leftItems.push({ text: option.text, value: option.value });
+				left.push({ text: option.text, value: option.value });
 			});
+			
+			return left;
+        },
+        
+        /**
+         * get right select items
+         * 
+         * @author Ximing Wang
+         */
+        getRight: function () {
+        	var rightOptions = $(this).find('.lbs-right-select').find('option');
+			var right = [];
 			
 			// find right options
 			$.each(rightOptions, function (index, option) {
-				rightItems.push({ text: option.text, value: option.value });
+				right.push({ text: option.text, value: option.value });
 			});
 			
-			return { left: leftItems, right: rightItems };
+			return right;
+        },
+        
+        /**
+         * set left select items
+         * 
+         * @author Ximing Wang
+         */
+        setLeft: function (items) {
+        	if (items == undefined || items == null) {
+        		return;
+        	}
+        	
+        	var options = $(this).data('options');
+        	options.left = items;
+        	$(this).data('options', options);
+        	var leftSelect = $(this).find('.lbs-left-select');
+        	var option = null;
+        	
+        	// empty left select
+        	leftSelect.empty();
+        	
+        	// update data
+        	$.each(items, function (index, item) {
+        		if (item.text != undefined) {
+        			option = new Option(item.text, item.value);
+        			option.title = item.text;
+        		}
+        		else {
+        			option = new Option(item, '');
+            		option.title = item;
+        		}
+        		leftSelect.append(option);
+        	});
+        },
+        
+        /**
+         * set right select items
+         * 
+         * @author Ximing Wang
+         */
+        setRight: function (items) {
+        	if (items == undefined || items == null) {
+        		return;
+        	}
+        	
+        	var options = $(this).data('options');
+        	options.right = items;
+        	$(this).data('options', options);
+        	var rightSelect = $(this).find('.lbs-right-select');
+        	var option = null;
+        	
+        	// empty right empty
+        	rightSelect.empty();
+        	
+        	// update data
+        	$.each(items, function (index, item) {
+        		if (item.text != undefined) {
+        			option = new Option(item.text, item.value);
+        			option.title = item.text;
+        		}
+        		else {
+        			option = new Option(item, '');
+            		option.title = item;
+        		}
+        		rightSelect.append(option);
+        	});
         }
     };
     
