@@ -168,6 +168,8 @@
     		}
     		
     		changeBtnStatus(instance);
+    		
+    		cancelAllSelected(instance);
     	});
     	
     	// addAll button click event
@@ -180,6 +182,8 @@
 			selectSort(instance, rightSelect);
 			
 			changeBtnStatus(instance);
+			
+			cancelAllSelected(instance);
     	});
     	
     	// removeOne button click event
@@ -201,6 +205,8 @@
     		}
     		
     		changeBtnStatus(instance);
+    		
+    		cancelAllSelected(instance);
     	});
     	
     	// removeAll button click event
@@ -213,13 +219,15 @@
 			selectSort(instance, leftSelect);
 			
 			changeBtnStatus(instance);
+			
+			cancelAllSelected(instance);
     	});
     	
     	changeBtnStatus(instance);
     	
     	var options = $(instance).data('options');
-    	var confirmCallback = options.confirm.callback;
-    	if (confirmCallback != null) {
+    	var confirm = options.confirm;
+    	if (confirm != null) {
     		// if has confirm button,callback
     		var confirmBtn = $(instance).find('.lbs-confirm-btn');
     		confirmBtn.on('click', function () {
@@ -237,9 +245,21 @@
     			$.each(rightOptions, function (index, option) {
     				rightItems.push({ text: option.text, value: option.value });
     			});
-    			confirmCallback({ left: leftItems, right: rightItems });
+    			comfirm.callback({ left: leftItems, right: rightItems });
     		});
     	}
+    };
+    
+    /**
+     * cansel all options selected
+     * 
+     * @author Ximing Wang
+     */
+    var cancelAllSelected = function (instance) {
+    	var options = $(instance).find('option');
+    	$.each(options, function (index, option) {
+    		option.selected = false;
+    	});
     };
     
     /**
