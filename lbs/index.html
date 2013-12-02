@@ -80,8 +80,17 @@
 				}
 			}
 		});
+		
+		// get left and right items
 		console.log($('#listBoxSelector').listBoxSelector('getItems'));
 		
+		// get left items
+		console.log($('#listBoxSelector').listBoxSelector('getLeft'));
+		
+		// get right items
+		console.log($('#listBoxSelector').listBoxSelector('getRight'));
+		
+		// set left select items
 		$('#listBoxSelector').listBoxSelector('setLeft', [{
 			text: 'item1',
 			value: 1
@@ -98,6 +107,8 @@
 			text: 'item5',
 			value: 5
 		}]);
+		
+		// set right select items
 		$('#listBoxSelector').listBoxSelector('setRight', [{
 			text: 'item1',
 			value: 1
