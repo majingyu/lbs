@@ -96,6 +96,7 @@
         		return;
         	}
         	
+        	var self = this;
         	var options = $(this).data('options');
         	options.left = items;
         	$(this).data('options', options);
@@ -117,6 +118,8 @@
         		}
         		leftSelect.append(option);
         	});
+        	
+        	changeBtnStatus(self);
         },
         
         /**
@@ -129,6 +132,7 @@
         		return;
         	}
         	
+        	var self = this;
         	var options = $(this).data('options');
         	options.right = items;
         	$(this).data('options', options);
@@ -150,6 +154,8 @@
         		}
         		rightSelect.append(option);
         	});
+        	
+        	changeBtnStatus(self);
         }
     };
     
