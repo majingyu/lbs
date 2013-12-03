@@ -33,6 +33,7 @@
 		/*$('#listBoxSelector').listBoxSelector({
 			left: ['item1', 'item2', 'item3', 'item4', 'item5', 'item6', 'item7'],
 			right: ['item8', 'item9', 'item10'],
+			sort: true,
 			confirm : {
 				text: 'OK',
 				callback: function (items) {
@@ -40,6 +41,16 @@
 				}
 			}
 		});*/
+		
+		var defaultOptions = {
+        		left: [],
+        		right: [],
+        		leftTitle: '',
+        		rightTitle: '',
+        		sort: false,
+        		confirm: null
+        	};
+		
 		$('#listBoxSelector').listBoxSelector({
 			left: [{
 				text: 'item1',
@@ -73,6 +84,9 @@
 				text: 'item10',
 				value: 10
 			}],
+			leftTitle: 'Left Title',
+			rightTitle: 'Right Title',
+			sort: false,
 			confirm : {
 				text: 'OK',
 				callback: function (items) {
@@ -108,6 +122,9 @@
 			value: 5
 		}]);
 		
+		// set left title
+		$('#listBoxSelector').listBoxSelector('setLeftTitle', 'New Left Title');
+		
 		// set right select items
 		$('#listBoxSelector').listBoxSelector('setRight', [{
 			text: 'item1',
@@ -125,5 +142,8 @@
 			text: 'item5',
 			value: 5
 		}]);
+		
+		// set right title
+		$('#listBoxSelector').listBoxSelector('setRightTitle', 'New Right Title');
 	</script>
 </html>
